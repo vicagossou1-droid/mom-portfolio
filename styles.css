@@ -1,0 +1,761 @@
+/* =========================================
+   RESET & BASE
+   ========================================= */
+
+/* Réinitialise les marges/paddings et uniformise le box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base typographique et couleurs globales */
+body {
+  font-family: 'Poppins', sans-serif;  /* Police lisible et moderne */
+  line-height: 1.6;                    /* Améliore la lecture */
+  color: #333333;                      /* Gris foncé pour le texte principal */
+  background-color: whitesmoke;             /* Fond blanc pour la clarté */
+}
+
+/* Titres avec une hauteur de ligne compacte */
+h1, h2, h3, h4 {
+  line-height: 1.2;
+}
+
+/* Espacement vertical standard des sections */
+section {
+  padding: 80px 0;
+}
+
+/* Conteneur central pour limiter la largeur et centrer le contenu */
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   TITRES DE SECTIONS (style commun)
+   ========================================= */
+
+/* Titre principal de chaque section */
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #004B87;            /* Bleu marine légèrement adouci */
+  position: relative;
+}
+
+/* Petit filet décoratif sous le titre */
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #006BB3; /* Bleu principal légèrement adouci */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* =========================================
+   HEADER & NAVIGATION
+   ========================================= */
+
+/* Header fixe en haut, avec légère ombre pour la profondeur */
+header {
+  background-color: white;
+  padding: 15px 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Au-dessus du contenu */
+}
+
+/* Barre de navigation alignée horizontalement */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Zone logo (texte et image) */
+.logo {
+  font-size: 1.5em;
+  font-weight: 800;
+  color: #004B87;           /* Bleu marine discret */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Image du logo en cercle avec une petite ombre */
+.logo img {
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out; /* Effet doux au survol */
+}
+
+/* Animation légère au survol du logo */
+.logo:hover img {
+  transform: scale(1.05) rotate(5deg);
+}
+
+/* Liste de liens du menu */
+.nav-lien {
+  list-style: none;
+  display: flex;
+}
+
+/* Espacement entre les items du menu */
+.nav-lien li {
+  margin-left: 25px;
+}
+
+/* Style des liens du menu */
+.nav-lien a {
+  text-decoration: none;
+  color: #333333;          /* Gris foncé pour la lisibilité */
+  font-weight: 600;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding-bottom: 5px;
+}
+
+/* Effet de survol des liens du menu */
+.nav-lien a:hover {
+  color: #006BB3;          /* Bleu principal adouci */
+  border-bottom: 2px solid #006BB3;
+}
+
+/* Bouton d’appel à l’action dans le header */
+.contact-btn {
+  background-color: #007A7A; /* Bleu canard discret (accent) */
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+/* Survol du bouton contact */
+.contact-btn:hover {
+  background-color: #006BB3; /* Passe au bleu principal */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   HERO (section d’accueil)
+   ========================================= */
+
+/* Grand bandeau en dégradé bleu adouci */
+.hero {
+  background: linear-gradient(135deg, #004B87 0%, #006BB3 100%);
+  padding: 100px 0;
+  color: white;
+}
+
+/* Mise en page du contenu hero en deux colonnes */
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Texte du hero (à gauche) */
+.hero-text {
+  max-width: 60%; 
+}
+
+/* Slogan au-dessus du titre en bleu ciel doux */
+.hero-text p:first-child {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: lightblue; /* Nom de couleur pour un rendu doux */
+}
+
+/* Gros titre du hero */
+.hero h1 {
+  font-size: 3.5em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* Paragraphe descriptif du hero */
+.hero-text p:last-of-type {
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+/* Boutons d’action dans le hero */
+.hero-buttons a {
+  display: inline-block;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  margin-right: 15px;
+  margin-top: 30px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Bouton CV (fond blanc) */
+.btn-cv {
+  background-color: white;
+  color: #004B87;
+  border: 2px solid white;
+}
+
+/* Survol du bouton CV */
+.btn-cv:hover {
+  background-color: #f4f7f9; /* Gris très clair pour contraster */
+  color: #004B87;
+  border-color: #f4f7f9;
+}
+
+/* Bouton réalisations (transparent avec bord blanc) */
+.btn-realisations {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+/* Survol du bouton réalisations */
+.btn-realisations:hover {
+  background-color: white;
+  color: #006BB3;
+  border-color: white;
+}
+
+/* Effet commun sur les boutons du hero */
+.hero-buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image portrait à droite */
+.hero-image {
+  width: 300px;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border: 5px solid white;
+  flex-shrink: 0;
+  transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
+}
+
+/* Survol de l’image : léger zoom et déplacement */
+.hero-image:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Image responsive à l’intérieur du cadre */
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================================
+   ABOUT (À propos)
+   ========================================= */
+
+/* Section à propos sur fond blanc */
+.about {
+  text-align: center;
+  padding: 80px 0;
+  background-color: white;
+}
+
+/* Paragraphe descriptif centré et lisible */
+.about-description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.1em;
+  color: #6c757d; /* Gris moyen pour le texte secondaire */
+}
+
+/* Bloc des statistiques (prestations, années, satisfaction) */
+.stats-wrapper {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 30px 0;
+}
+
+/* Carte d’une statistique */
+.stat-item {
+  text-align: center;
+  flex: 1;
+  padding: 15px;
+  background-color: #f4f7f9; /* Fond clair doux */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+/* Survol des cartes de stats : légère élévation */
+.stat-item:hover {
+  transform: translateY(-4px);
+}
+
+/* Chiffre de la statistique */
+.stat-item h3 {
+  font-size: 2.8em;
+  color: #006BB3; /* Bleu principal adouci */
+  margin-bottom: 5px;
+  font-weight: 800;
+}
+
+/* Libellé de la statistique */
+.stat-item p {
+  font-weight: 500;
+  color: #333333; /* Texte principal */
+  font-size: 0.95em;
+}
+
+/* =========================================
+   SERVICES
+   ========================================= */
+
+/* Section services avec fond gris très clair */
+.services {
+  padding: 80px 0;
+  background-color: #f4f7f9; /* Contraste léger avec les cartes blanches */
+}
+
+/* Introduction des services */
+.services > p {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  font-size: 1.1em;
+  color: #6c757d; /* Texte secondaire */
+}
+
+/* Grille flexible des services */
+.mes-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Carte de service individuelle */
+.service {
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 280px;
+  padding: 30px;
+  text-align: center;
+  background-color: white; /* Cartes blanches sur fond clair */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Survol des cartes de service */
+.service:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* (Optionnel) Conteneur d’icône ronde pour les services — si tu décides d’ajouter des <div class="icon"> */
+.service .icon {
+  width: 75px;
+  height: 75px;
+  background-color: #e6f3ff; /* Bleu très clair (fond de l’icône) */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px auto;
+  transition: background-color 0.3s;
+}
+
+/* Survol : fond de l’icône passe au bleu principal */
+.service:hover .icon {
+  background-color: #006BB3;
+}
+
+/* Icône (Font Awesome) à l’intérieur du conteneur .icon */
+.service .icon i {
+  font-size: 35px;
+  color: #006BB3; /* Couleur de l’icône */
+  transition: color 0.3s;
+}
+
+/* Survol : icône devient blanche sur fond bleu */
+.service:hover .icon i {
+  color: white;
+}
+
+/* Titre du service */
+.service h4 {
+  margin-top: 10px;
+  font-size: 1.3em;
+  color: #004B87; /* Bleu marine discret */
+}
+
+/* Texte du service */
+.service p {
+  font-size: 1em;
+  color: #6c757d; /* Gris moyen */
+}
+
+/* Forcer la couleur noire des icônes Font Awesome génériques si utilisées directement dans <h4> */
+.fas {
+  color: black;
+}
+
+/* =========================================
+   RÉALISATIONS (projets)
+   ========================================= */
+
+/* Section réalisations sur fond blanc */
+.realisations {
+  background-color: white;
+  padding: 80px 0;
+}
+
+/* Paragraphe d’intro des réalisations */
+.realisations > p {
+  text-align: center;
+  font-size: 1.1em;
+  color: #6c757d;
+  margin-bottom: 40px;
+}
+
+/* Grille des projets centrée et fluide */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Carte de projet */
+.project {
+  width: 280px;
+  background-color: #f4f7f9; /* Fond doux pour la carte */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Survol de la carte projet */
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image du projet avec coins arrondis */
+.project img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* Titre du projet en bleu marine discret */
+.project h4 {
+  color: #004B87;
+  margin-bottom: 10px;
+}
+
+/* Description du projet en gris moyen */
+.project p {
+  color: #6c757d;
+  font-size: 0.95em;
+}
+
+/* =========================================
+   COMPÉTENCES (barres de progression)
+   ========================================= */
+
+/* Section compétences sur fond clair */
+.competences {
+  background-color: #f4f7f9;
+  padding: 80px 0;
+}
+
+/* Grille responsive des blocs de compétences */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Bloc individuel de compétence */
+.skill-block {
+  margin-bottom: 20px;
+}
+
+/* Étiquette de compétence (nom + pourcentage) */
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #004B87; /* Bleu marine discret */
+}
+
+/* Pourcentage en gris moyen */
+.percent {
+  color: #6c757d;
+}
+
+/* Piste de la barre de progression */
+.progress-bar {
+  background-color: #e0e0e0; /* Gris neutre pour la piste */
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Remplissage de la barre (progression) */
+.progress-fill {
+  height: 100%;
+  background-color: #006BB3; /* Bleu principal adouci */
+  border-radius: 5px;
+}
+
+/* =========================================
+   TÉMOIGNAGES
+   ========================================= */
+
+/* Section témoignages sur fond blanc */
+.temoignages {
+  background-color: white;
+  padding: 80px 0;
+}
+
+/* Titre déjà stylé par le style commun des section h2 */
+
+/* Grille des témoignages */
+.testimonial-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Carte de témoignage */
+.testimonial {
+  flex: 1 1 400px;
+  background-color: #f4f7f9; /* Fond doux */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-style: italic;
+  color: #333333; /* Texte principal */
+  transition: transform 0.3s;
+}
+
+/* Survol des témoignages : petite élévation */
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Signature du témoignage à droite en bleu adouci */
+.testimonial h4 {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #006BB3;  /* Bleu principal adouci */
+  text-align: right;
+}
+
+/* =========================================
+   CONTACT
+   ========================================= */
+
+/* Section contact sur fond clair */
+.contact {
+  background-color: #f4f7f9;
+  padding: 80px 0;
+}
+
+/* Titre déjà stylé par section h2 */
+
+/* Intro du contact */
+.contact p {
+  text-align: center;
+  font-size: 1.1em;
+  color: #6c757d; /* Gris moyen */
+  margin-bottom: 40px;
+}
+
+/* Formulaire centré et vertical */
+form {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Champs du formulaire (inputs et textarea) */
+form input,
+form textarea {
+  padding: 12px 15px;
+  border: 1px solid #cccccc; /* Gris clair standard */
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Zone de texte redimensionnable verticalement */
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Bouton d’envoi du formulaire */
+form button {
+  background-color: #007A7A; /* Accent bleu canard discret */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Survol du bouton d’envoi */
+form button:hover {
+  background-color: #006BB3; /* Passe au bleu principal */
+  transform: translateY(-2px);
+}
+
+/* Coordonnées sous le formulaire */
+.contact-info {
+  text-align: center;
+  color: #333333;
+  font-size: 1em;
+}
+
+/* Espacement entre les lignes d’info */
+.contact-info p {
+  margin: 10px 0;
+}
+
+/* Icônes de contact en bleu principal */
+.contact-info i {
+  margin-right: 8px;
+  color: #006BB3;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+/* Pied de page en bleu marine avec texte blanc */
+footer {
+  background-color: #004B87; /* Bleu marine adouci */
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* Texte du footer */
+footer p {
+  margin-bottom: 15px;
+  font-size: 0.95em;
+}
+
+/* =========================================
+   MEDIA QUERIES (responsiveness)
+   ========================================= */
+
+/* Tablettes et écrans moyens */
+@media (max-width: 992px) {
+  /* Hero empilé (image au-dessus) */
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    order: -1;          /* Met l’image avant le texte */
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.8em;   /* Réduit légèrement le titre */
+  }
+
+  .hero-buttons {
+    text-align: center;
+  }
+
+  /* Cache le menu horizontal (en attendant un menu hamburger) */
+  .nav-lien {
+    display: none;
+  }
+
+  /* Stats en deux colonnes */
+  .stats-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    flex: 1 1 calc(50% - 10px);
+  }
+
+  /* Services en deux colonnes */
+  .service {
+    flex: 1 1 calc(50% - 15px);
+  }
+}
+
+/* Mobiles et petits écrans */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0; /* Réduit l’espace vertical */
+  }
+
+  .contact-btn {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
+
+  .hero h1 {
+    font-size: 2.2em; /* Titre plus compact */
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-buttons a {
+    margin-right: 0;
+    width: 100%; /* Boutons pleine largeur */
+  }
+
+  /* Stats en une colonne */
+  .stat-item {
+    flex: 1 1 100%;
+  }
+
+  /* Services en une colonne */
+  .service {
+    flex: 1 1 100%;
+  }
+}
