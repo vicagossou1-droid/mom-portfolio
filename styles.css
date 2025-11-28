@@ -69,7 +69,7 @@ section h2::after {
    ==================================== */
 header {
     background-color: var(--white);
-    padding: 15px 0;
+    padding: 25px 0;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
@@ -80,6 +80,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
 }
 
 .logo {
@@ -423,7 +424,7 @@ nav {
     height: auto;
     object-fit: cover;
     display: block;
-    border-radius: 15px;
+    border-radius: 10px;
   }
 
     .hero h1 {
@@ -451,8 +452,10 @@ nav {
         padding: 60px 0;
     }
     .contact-btn {
+        display: inline-block;
         padding: 6px 12px;
         font-size: 0.9em;
+        border-radius: 25px;
     }
     .hero h1 {
         font-size: 2.2em;
@@ -716,29 +719,3 @@ footer p {
 margin-bottom: 15px;
 font-size: 0.95em;
 }
-
-.socials {
-display: flex;
-justify-content: center;
-gap: 20px;
-flex-wrap: wrap;
-}
-
-.socials a {
-color: var(--white);
-text-decoration: none;
-font-weight: 600;
-transition: color 0.3s;
-display: flex;
-align-items: center;
-gap: 8px;
-}
-
-.socials a:hover {
-color: var(--light-sky-blue);
-}
-
-.socials i {
-font-size: 1.2em;
-}
-
