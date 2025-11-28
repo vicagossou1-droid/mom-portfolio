@@ -169,36 +169,16 @@
              <div class="skill-block">
                 <div class="skill-label">
                     <span>Réparation Mobile</span>
-                    <span class="percent">85%</span>
+                    <span class="percent">80%</span>
                 </div>
             <div class="progress-bar">
-                <div class="progress-fill" style="width:85%"></div>
+                <div class="progress-fill" style="width:80%"></div>
             </div>
       </div>
 
       <div class="skill-block">
         <div class="skill-label">
           <span>Installation Antennes</span>
-          <span class="percent">80%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width:80%"></div>
-        </div>
-      </div>
-
-      <div class="skill-block">
-        <div class="skill-label">
-          <span>Électricité bâtiment</span>
-          <span class="percent">75%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width:75%"></div>
-        </div>
-      </div>
-
-      <div class="skill-block">
-        <div class="skill-label">
-          <span>Plomberie bâtiment</span>
           <span class="percent">70%</span>
         </div>
         <div class="progress-bar">
@@ -208,11 +188,31 @@
 
       <div class="skill-block">
         <div class="skill-label">
-          <span>Administration Wi-Fi</span>
+          <span>Électricité bâtiment</span>
           <span class="percent">65%</span>
         </div>
         <div class="progress-bar">
           <div class="progress-fill" style="width:65%"></div>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-label">
+          <span>Plomberie bâtiment</span>
+          <span class="percent">45%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:45%"></div>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-label">
+          <span>Administration Wi-Fi</span>
+          <span class="percent">50%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:50%"></div>
         </div>
       </div>
 
@@ -253,13 +253,22 @@
         <div class="container">
             <h2>Contactez-moi</h2>
             <p>Vous avez un projet ou une question ? Discutons-en ensemble.</p>
-            <form>
+            <form action="https://formspree.io/f/xgvjzrdr" method="POST">
                 <input type="text" placeholder="Votre nom" required>
                 <input type="email" placeholder="Votre email" required>
                 <input type="tel" placeholder="Votre numéro de téléphone">
                 <textarea placeholder="Votre message" required></textarea>
+                
+                <!-- Anti-spam invisible -->
+                <input type="text" name="_gotcha" style="display:none">
+
+                <!-- Redirection après envoi -->
+                <input type="hidden" name="_subject" value="Nouveau message AKVA_Service">
+                <input type="hidden" name="_next" value="https://vicagossou1-droid.github.io/merci.html">
+
                 <button type="submit">Envoyer</button>
             </form>
+            
             <div class="contact-info">
                 <p><i class="fa fa-phone"></i> <a href="tel:+228-96849538">+228-96849538</a> / <a href="tel:+228-91977125">+228-91977125</a></p>
                 <p><i class="fa fa-envelope"></i> <a href="mailto:akvaservice.tg@gmail.com">akvaservice.tg@gmail.com</a></p>
@@ -275,8 +284,6 @@
             <p>&copy; 2025 AKVA_Service - Tous droits réservés</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 
 </body>
 </html>
